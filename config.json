@@ -1,0 +1,18 @@
+{
+    "user": "changeme",
+    "password": "changeme",
+    "project": 2467,
+    "jamaHost": "https://w9o.jamacloud.com",
+    "storyPrefix": "LOTS-STORY-",
+    "requirementPrefix": "LOTS-LOTSREQ-",
+    "folderPrefix": "LOTS-FLD-",
+    "requirementSetName": "LOTS-SET-13",
+    "jiraKeyFieldName": "SYS_JIRA_KEY$10454",
+    "releaseMapping": {
+        "4227": "Release 4",
+        "4226": "Release 3",
+        "4225": "Release 2",
+        "4224": "Release 1",
+        "4218": "Unassigned"
+    }
+}
