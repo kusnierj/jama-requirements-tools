@@ -12,9 +12,6 @@ var Client = require('node-rest-client').Client;
 var options_auth = { user: config.user, password: config.password };
 var client = new Client(options_auth);
 
-var stories = [];
-var epics = {};
-
 var args = {
     parameters: { project: config.project, maxResults: 50, startAt: 1 }
 };
