@@ -30,8 +30,7 @@ function getStories(startAt) {
             }
         );
 
-        // TODO find a better way to do this, this will fail if resutls are % 50
-        if (data.data.length === 50) {
+        if (data.meta.pageInfo.resultCount === 50) {
             getStories(50);
         }
     });
