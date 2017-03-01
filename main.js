@@ -81,7 +81,7 @@ function getEpic(story, parentId, lastFolder) {
 
 function printRecord(story, folder) {
     if (folder) {
-        console.log(story.id + "," + story.fields[config.jiraKeyFieldName] + "," + (config.releaseMapping[story.fields.release] || "?") + "," + story.documentKey + "," + folder.data.fields.name);
+        console.log(story.id + "," + story.fields[config.jiraKeyFieldName] + "," + (config.releaseMapping[story.fields.release] || "?") + "," + story.documentKey + ",\"" + folder.data.fields.name + "\"");
     } else {
         console.log(story.id + "," + story.fields[config.jiraKeyFieldName] + "," + (config.releaseMapping[story.fields.release] || "?") + "," + story.documentKey);
     }
