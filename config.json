@@ -8,6 +8,7 @@
     "epicPrefix": "LOTS-EPIC-",
     "folderPrefix": "LOTS-FLD-",
     "requirementSetName": "LOTS-SET-13",
+    "storySetId": 1897314,
     "jiraKeyFieldName": "SYS_JIRA_KEY$10454",
     "releaseMapping": {
         "4227": "Release 4",
