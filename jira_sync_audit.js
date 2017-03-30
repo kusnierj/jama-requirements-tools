@@ -26,7 +26,11 @@ function getStories(startAt) {
             function(element) {
                 if (element.documentKey.startsWith(config.storyPrefix)) {
                     client.get(config.jamaHost + "/rest/v1/items/" + element.id + "/versions", { project: config.project }, function(versionData, versionResponse) {
-                        printRecord(element, versionData);
+                        printStory(element, versionData);
+                    });
+                } else if (element.documentKey.startsWith(config.defectPrefix) && element.fields['status'] === config.defectReviewedStatus) {
+                    client.get(config.jamaHost + "/rest/v1/items/" + element.id + "/versions", { project: config.project }, function(versionData, versionResponse) {
+                        printDefect(element, versionData);
                     });
                 }
             }
@@ -38,8 +42,17 @@ function getStories(startAt) {
     });
 }
 
-function printRecord(story, version) {
+function printStory(story, version) {
     var lastSyncVersion = story.fields['SYS_JIRA_SYNC_VERSION$10454'];
+    var latestVersion = version.data[0].versionNumber;
+
+    if (lastSyncVersion !== latestVersion) {
+        console.log(story.id + "," + story.fields[config.jiraKeyFieldName] + "," + "," + story.documentKey + "," + lastSyncVersion + "," + latestVersion);
+    }
+}
+
+function printDefect(story, version) {
+    var lastSyncVersion = story.fields['SYS_JIRA_SYNC_VERSION$10458'];
     var latestVersion = version.data[0].versionNumber;
 
     if (lastSyncVersion !== latestVersion) {
