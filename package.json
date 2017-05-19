@@ -10,6 +10,7 @@
   "author": "Jason Kusnier",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^0.22.0",
     "dnscache": "^1.0.1",
     "node-rest-client": "^2.5.0"
   }
